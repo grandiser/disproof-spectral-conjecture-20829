@@ -1,0 +1,26 @@
+name: Verify proofs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python-proofs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/prove_symbolic.py
+      - run: python scripts/verify_high_precision.py --self-test
+      - run: python scripts/verify_high_precision.py data/G11.json
+
+  lean-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build-args: Disproof20829

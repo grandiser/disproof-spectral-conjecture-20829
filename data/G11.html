@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    padding: 18px;
+  }
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px 24px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin-bottom: 4px;
+  }
+  .sub {
+    font-size: 12.5px;
+    color: #8b949e;
+    margin-bottom: 16px;
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .stat {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .stat .label {
+    font-size: 11px;
+    color: #8b949e;
+    margin-bottom: 4px;
+  }
+  .stat .val {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #f0f6fc;
+    white-space: nowrap;
+  }
+  .stat.bad {
+    border-color: #f8514966;
+    background: #f8514912;
+  }
+  .stat.bad .val {
+    color: #ff7b72;
+  }
+  .legend {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: #8b949e;
+    align-items: center;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Counterexample G₁₁ to Conjecture 2 (#20829): λ₂ ≤ μ₁ − 2</h1>
+  <div class="sub">Two diamonds (K₄ − e) joined at degree-2 vertices by a 5-vertex path P₅ · n = 11 vertices, m = 14 edges, max degree Δ = 3</div>
+
+  <svg viewBox="0 0 660 220" xmlns="http://www.w3.org/2000/svg">
+    <text x="115" y="24" fill="#58a6ff" font-size="11.5" font-weight="600" text-anchor="middle">Left diamond (K₄ − e)</text>
+    <text x="330" y="24" fill="#d29922" font-size="11.5" font-weight="600" text-anchor="middle">Bridge path P₅</text>
+    <text x="545" y="24" fill="#58a6ff" font-size="11.5" font-weight="600" text-anchor="middle">Right diamond (K₄ − e)</text>
+
+    <rect x="28" y="34" width="174" height="156" rx="10" fill="none" stroke="#58a6ff33" stroke-dasharray="4 4"/>
+    <rect x="458" y="34" width="174" height="156" rx="10" fill="none" stroke="#58a6ff33" stroke-dasharray="4 4"/>
+
+    <g stroke="#58a6ff" stroke-width="2.4" stroke-linecap="round">
+      <line x1="55" y1="112" x2="115" y2="62"/>
+      <line x1="55" y1="112" x2="115" y2="162"/>
+      <line x1="115" y1="62" x2="115" y2="162"/>
+      <line x1="115" y1="62" x2="175" y2="112"/>
+      <line x1="115" y1="162" x2="175" y2="112"/>
+    </g>
+
+    <g stroke="#d29922" stroke-width="2.6" stroke-linecap="round">
+      <line x1="175" y1="112" x2="252" y2="112"/>
+      <line x1="252" y1="112" x2="330" y2="112"/>
+      <line x1="330" y1="112" x2="408" y2="112"/>
+      <line x1="408" y1="112" x2="485" y2="112"/>
+    </g>
+
+    <g stroke="#58a6ff" stroke-width="2.4" stroke-linecap="round">
+      <line x1="485" y1="112" x2="545" y2="62"/>
+      <line x1="485" y1="112" x2="545" y2="162"/>
+      <line x1="545" y1="62" x2="545" y2="162"/>
+      <line x1="545" y1="62" x2="605" y2="112"/>
+      <line x1="545" y1="162" x2="605" y2="112"/>
+    </g>
+
+    <g font-family="ui-monospace, Menlo, monospace" font-size="11.5" font-weight="700" text-anchor="middle" dominant-baseline="central">
+      <circle cx="55" cy="112" r="14" fill="#1f2937" stroke="#d29922" stroke-width="2.2"/>
+      <text x="55" y="112" fill="#f0f6fc">0</text>
+      <text x="55" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=2</text>
+
+      <circle cx="115" cy="62" r="14" fill="#162b44" stroke="#58a6ff" stroke-width="2.2"/>
+      <text x="115" y="62" fill="#f0f6fc">1</text>
+      <text x="115" y="42" fill="#8b949e" font-size="9.5" font-weight="400">d=3</text>
+
+      <circle cx="115" cy="162" r="14" fill="#162b44" stroke="#58a6ff" stroke-width="2.2"/>
+      <text x="115" y="162" fill="#f0f6fc">2</text>
+      <text x="115" y="182" fill="#8b949e" font-size="9.5" font-weight="400">d=3</text>
+
+      <circle cx="175" cy="112" r="14" fill="#162b44" stroke="#58a6ff" stroke-width="2.2"/>
+      <text x="175" y="112" fill="#f0f6fc">3</text>
+      <text x="175" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=3</text>
+
+      <circle cx="252" cy="112" r="14" fill="#1f2937" stroke="#d29922" stroke-width="2.2"/>
+      <text x="252" y="112" fill="#f0f6fc">4</text>
+      <text x="252" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=2</text>
+
+      <circle cx="330" cy="112" r="14" fill="#1f2937" stroke="#d29922" stroke-width="2.2"/>
+      <text x="330" y="112" fill="#f0f6fc">5</text>
+      <text x="330" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=2</text>
+
+      <circle cx="408" cy="112" r="14" fill="#1f2937" stroke="#d29922" stroke-width="2.2"/>
+      <text x="408" y="112" fill="#f0f6fc">6</text>
+      <text x="408" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=2</text>
+
+      <circle cx="485" cy="112" r="14" fill="#162b44" stroke="#58a6ff" stroke-width="2.2"/>
+      <text x="485" y="112" fill="#f0f6fc">7</text>
+      <text x="485" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=3</text>
+
+      <circle cx="545" cy="62" r="14" fill="#162b44" stroke="#58a6ff" stroke-width="2.2"/>
+      <text x="545" y="62" fill="#f0f6fc">8</text>
+      <text x="545" y="42" fill="#8b949e" font-size="9.5" font-weight="400">d=3</text>
+
+      <circle cx="545" cy="162" r="14" fill="#162b44" stroke="#58a6ff" stroke-width="2.2"/>
+      <text x="545" y="162" fill="#f0f6fc">9</text>
+      <text x="545" y="182" fill="#8b949e" font-size="9.5" font-weight="400">d=3</text>
+
+      <circle cx="605" cy="112" r="14" fill="#1f2937" stroke="#d29922" stroke-width="2.2"/>
+      <text x="605" y="112" fill="#f0f6fc">10</text>
+      <text x="605" y="136" fill="#8b949e" font-size="9.5" font-weight="400">d=2</text>
+    </g>
+
+    <text x="330" y="207" fill="#8b949e" font-size="11" text-anchor="middle">Attaching P₅ to the missing-edge vertices (3 and 7) keeps every vertex degree ≤ 3, capping μ₁.</text>
+  </svg>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="label">λ₂ (2nd adj. eig.)</div>
+      <div class="val">2.641186...</div>
+    </div>
+    <div class="stat">
+      <div class="label">μ₁ = (7+√5)/2</div>
+      <div class="val">4.618034...</div>
+    </div>
+    <div class="stat">
+      <div class="label">μ₁ − 2 (cap)</div>
+      <div class="val">2.618034...</div>
+    </div>
+    <div class="stat bad">
+      <div class="label">Margin (μ₁ − 2 − λ₂)</div>
+      <div class="val">−0.023152</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot" style="background:#58a6ff"></span>Degree 3 (6 vertices)</span>
+    <span><span class="dot" style="background:#d29922"></span>Degree 2 (5 vertices)</span>
+    <span>graph6: JzCGGC@?W@_ · data/G11.json</span>
+  </div>
+</div>
+</body>
+</html>

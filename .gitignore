@@ -1,0 +1,8 @@
+.lake/
+.venv/
+__pycache__/
+*.pyc
+*.o
+*.out
+search/bin/
+.DS_Store
